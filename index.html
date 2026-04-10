@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The True - Independent Investigation Journal. Uncovering what history tried to erase.">
+<meta property="og:title" content="The True - The Bloody Moon Order">
+<meta property="og:description" content="A document recovered from the Bibliotheque Nationale de France. A letter. A signature : M. Nostredamme.">
+<title>THE TRUE - Independent Investigation Journal</title>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IM+Fell+English:ital@0;1&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0A0908;--paper:#F2E8D5;--paper-dark:#DDD0B3;--paper-mid:#E8DCC4;--blood:#8B0000;--blood-bright:#C0392B;--gold:#B8962E;--mist:#6B6055;--red-dim:rgba(139,0,0,0.15);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--paper);font-family:'IM Fell English',Georgia,serif;min-height:100vh;overflow-x:hidden;}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:0.4;}
+.lang-bar{background:var(--blood);text-align:center;padding:6px;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:0.2em;position:sticky;top:0;z-index:100;}
+.lang-bar button{background:none;border:none;color:var(--paper);cursor:pointer;font-family:inherit;font-size:inherit;letter-spacing:inherit;padding:0 12px;opacity:0.6;transition:opacity 0.2s;}
+.lang-bar button.active{opacity:1;font-weight:700;}
+.lang-bar span{color:rgba(242,232,213,0.3);}
+.masthead{border-bottom:3px double var(--paper-dark);padding:2.5rem 2rem 1.5rem;text-align:center;position:relative;background:linear-gradient(180deg,rgba(139,0,0,0.06) 0%,transparent 100%);}
+.masthead::after{content:'* * *';position:absolute;bottom:-0.65rem;left:50%;transform:translateX(-50%);background:var(--ink);padding:0 1rem;color:var(--gold);font-size:10px;letter-spacing:4px;}
+.masthead-eyebrow{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;}
+.masthead-title{font-family:'UnifrakturMaguntia',cursive;font-size:clamp(3.5rem,10vw,7rem);color:var(--paper);line-height:1;margin-bottom:0.25rem;text-shadow:2px 2px 0px rgba(0,0,0,0.5);}
+.masthead-subtitle{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.35em;color:var(--mist);text-transform:uppercase;margin-bottom:1.25rem;}
+.masthead-rule{display:flex;align-items:center;justify-content:center;gap:1rem;margin:1rem 0;color:var(--gold);font-size:12px;letter-spacing:0.3em;}
+.masthead-rule::before,.masthead-rule::after{content:'';flex:1;height:1px;background:var(--paper-dark);opacity:0.4;}
+.masthead-meta{display:flex;justify-content:space-between;align-items:center;font-family:'Courier Prime',monospace;font-size:10px;color:var(--mist);letter-spacing:0.1em;padding-top:0.75rem;border-top:1px solid rgba(242,232,213,0.1);flex-wrap:wrap;gap:0.5rem;}
+.countdown-bar{background:rgba(139,0,0,0.2);border-bottom:1px solid rgba(139,0,0,0.4);padding:0.75rem 2rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;}
+.countdown-label{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.3em;color:var(--blood-bright);text-transform:uppercase;}
+.countdown-timer{display:flex;gap:1rem;align-items:center;}
+.countdown-unit{text-align:center;}
+.countdown-num{font-family:'Courier Prime',monospace;font-size:1.4rem;font-weight:700;color:var(--blood-bright);display:block;line-height:1;}
+.countdown-unit-label{font-family:'Courier Prime',monospace;font-size:9px;letter-spacing:0.2em;color:var(--mist);text-transform:uppercase;}
+.countdown-sep{color:var(--blood-bright);font-size:1.2rem;opacity:0.5;}
+.page{max-width:1100px;margin:0 auto;padding:2rem 1.5rem 4rem;}
+.section-nav{display:flex;gap:0;border-bottom:2px solid rgba(242,232,213,0.15);margin-bottom:2.5rem;overflow-x:auto;}
+.nav-item{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--mist);padding:0.75rem 1.25rem;border-bottom:2px solid transparent;margin-bottom:-2px;cursor:pointer;white-space:nowrap;transition:all 0.2s;background:none;border-top:none;border-left:none;border-right:none;}
+.nav-item:hover{color:var(--paper);}
+.nav-item.active{color:var(--blood-bright);border-bottom-color:var(--blood-bright);}
+.breaking{border:1px solid rgba(139,0,0,0.5);background:rgba(139,0,0,0.08);padding:0.75rem 1.25rem;margin-bottom:2rem;display:flex;align-items:center;gap:1rem;animation:pulse-border 3s ease-in-out infinite;}
+@keyframes pulse-border{0%,100%{border-color:rgba(139,0,0,0.5);}50%{border-color:rgba(192,57,43,0.8);}}
+.breaking-tag{font-family:'Courier Prime',monospace;font-size:9px;letter-spacing:0.3em;background:var(--blood);color:var(--paper);padding:3px 8px;flex-shrink:0;text-transform:uppercase;}
+.breaking-text{font-family:'Courier Prime',monospace;font-size:11px;color:var(--paper-dark);}
+.section{display:none;}
+.section.active{display:block;}
+.article-header{border-bottom:1px solid rgba(242,232,213,0.15);padding-bottom:1.5rem;margin-bottom:2rem;}
+.article-kicker{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.35em;color:var(--blood-bright);text-transform:uppercase;margin-bottom:0.75rem;}
+.article-headline{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;color:var(--paper);margin-bottom:1rem;}
+.article-deck{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.1rem;color:var(--paper-dark);line-height:1.6;margin-bottom:1rem;}
+.article-byline{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.15em;color:var(--mist);text-transform:uppercase;}
+.article-body{display:grid;grid-template-columns:1fr 320px;gap:3rem;align-items:start;}
+.article-text p{font-size:1.05rem;line-height:1.85;color:rgba(242,232,213,0.85);margin-bottom:1.25rem;}
+.article-text h3{font-family:'Playfair Display',Georgia,serif;font-size:1.2rem;font-weight:700;color:var(--paper);margin:2rem 0 0.75rem;padding-top:1.5rem;border-top:1px solid rgba(242,232,213,0.1);}
+.blockquote{border-left:2px solid var(--blood);padding:0.75rem 1.25rem;margin:1.5rem 0;background:rgba(139,0,0,0.06);}
+.blockquote p{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1rem;color:var(--paper-dark);line-height:1.7;}
+.cipher-block{background:rgba(242,232,213,0.04);border:1px solid rgba(242,232,213,0.1);padding:1.25rem;margin:1.5rem 0;}
+.cipher-fr{font-size:1rem;color:var(--paper);margin-bottom:0.75rem;line-height:1.7;font-style:italic;}
+.cipher-en{font-size:0.9rem;color:var(--mist);line-height:1.7;font-style:italic;}
+.cipher-label{font-family:'Courier Prime',monospace;font-size:9px;letter-spacing:0.3em;color:var(--blood-bright);text-transform:uppercase;margin-bottom:0.5rem;}
+.article-sidebar{position:sticky;top:80px;}
+.sidebar-doc{border:1px solid rgba(242,232,213,0.15);margin-bottom:1.5rem;overflow:hidden;}
+.sidebar-doc img{width:100%;display:block;opacity:0.9;transition:opacity 0.3s;cursor:zoom-in;}
+.sidebar-doc img:hover{opacity:1;}
+.sidebar-doc-caption{padding:0.75rem;background:rgba(242,232,213,0.04);border-top:1px solid rgba(242,232,213,0.1);}
+.sidebar-doc-caption p{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.1em;color:var(--mist);line-height:1.5;}
+.sidebar-doc-caption .status{display:inline-block;background:rgba(139,0,0,0.3);color:var(--blood-bright);font-size:9px;letter-spacing:0.2em;padding:2px 8px;margin-bottom:6px;text-transform:uppercase;}
+.sidebar-update{border:1px solid rgba(139,0,0,0.3);background:rgba(139,0,0,0.06);padding:1rem;margin-bottom:1.5rem;}
+.sidebar-update-label{font-family:'Courier Prime',monospace;font-size:9px;letter-spacing:0.3em;color:var(--blood-bright);text-transform:uppercase;margin-bottom:0.5rem;}
+.sidebar-update p{font-size:0.85rem;color:var(--paper-dark);line-height:1.6;font-style:italic;}
+.docs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;}
+.doc-card{border:1px solid rgba(242,232,213,0.12);background:rgba(242,232,213,0.03);overflow:hidden;transition:border-color 0.2s;}
+.doc-card:hover{border-color:rgba(139,0,0,0.5);}
+.doc-card-img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;opacity:0.85;transition:opacity 0.3s;}
+.doc-card:hover .doc-card-img{opacity:1;}
+.doc-card-body{padding:1rem;border-top:1px solid rgba(242,232,213,0.08);}
+.doc-status{font-family:'Courier Prime',monospace;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;padding:2px 8px;display:inline-block;margin-bottom:8px;}
+.status-active{background:rgba(139,0,0,0.3);color:var(--blood-bright);}
+.status-partial{background:rgba(184,150,46,0.2);color:var(--gold);}
+.status-locked{background:rgba(107,96,85,0.3);color:var(--mist);}
+.doc-title{font-family:'Playfair Display',Georgia,serif;font-size:1rem;font-weight:700;color:var(--paper);margin-bottom:6px;line-height:1.3;}
+.doc-desc{font-family:'Courier Prime',monospace;font-size:10px;color:var(--mist);line-height:1.5;letter-spacing:0.05em;}
+.doc-placeholder{width:100%;aspect-ratio:3/4;background:rgba(242,232,213,0.03);display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(242,232,213,0.08);}
+.doc-placeholder-inner{text-align:center;color:var(--mist);}
+.doc-placeholder-icon{font-size:2rem;margin-bottom:0.5rem;display:block;opacity:0.3;}
+.doc-placeholder-text{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;opacity:0.4;}
+.investigation-timeline{position:relative;padding-left:2rem;}
+.investigation-timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--blood),transparent);opacity:0.4;}
+.timeline-entry{position:relative;margin-bottom:2rem;}
+.timeline-entry::before{content:'';position:absolute;left:-2.35rem;top:0.4rem;width:8px;height:8px;border-radius:50%;background:var(--blood-bright);border:1px solid var(--blood);}
+.timeline-date{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.2em;color:var(--blood-bright);text-transform:uppercase;margin-bottom:0.4rem;}
+.timeline-title{font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;font-weight:700;color:var(--paper);margin-bottom:0.4rem;}
+.timeline-body{font-size:0.9rem;color:rgba(242,232,213,0.65);line-height:1.7;}
+.timeline-entry.redacted .timeline-title{background:var(--paper);color:var(--paper);user-select:none;}
+.timeline-entry.redacted .timeline-body{filter:blur(3px);pointer-events:none;}
+.redacted-label{font-family:'Courier Prime',monospace;font-size:9px;letter-spacing:0.2em;color:var(--mist);text-transform:uppercase;display:block;margin-top:4px;filter:none !important;}
+.about-content{max-width:680px;}
+.about-content p{font-size:1rem;line-height:1.85;color:rgba(242,232,213,0.8);margin-bottom:1.25rem;}
+.about-warning{border:1px solid rgba(139,0,0,0.4);padding:1.25rem;background:rgba(139,0,0,0.06);margin-top:2rem;}
+.about-warning p{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:0.05em;color:var(--paper-dark);line-height:1.7;}
+.about-email{margin-top:1rem;}
+.about-email a{font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:0.15em;color:var(--blood-bright);text-decoration:none;border-bottom:1px solid rgba(192,57,43,0.3);transition:border-color 0.2s;}
+.about-email a:hover{border-color:var(--blood-bright);}
+.section-heading{font-family:'Playfair Display',Georgia,serif;font-size:1.6rem;font-weight:900;color:var(--paper);margin-bottom:0.5rem;}
+.section-sub{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.25em;color:var(--mist);text-transform:uppercase;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid rgba(242,232,213,0.1);}
+footer{border-top:1px solid rgba(242,232,213,0.08);padding:2rem 1.5rem;text-align:center;max-width:1100px;margin:0 auto;}
+footer p{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.2em;color:var(--mist);margin-bottom:0.25rem;}
+.footer-blood{color:var(--blood-bright);font-size:1rem;margin-bottom:0.5rem;display:block;}
+.footer-links{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin:1rem 0;}
+.footer-links a{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.15em;color:rgba(242,232,213,0.25);text-decoration:none;text-transform:uppercase;border-bottom:1px solid rgba(242,232,213,0.08);transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-disclaimer{font-size:9px !important;color:rgba(242,232,213,0.12) !important;margin-top:0.5rem;}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:1000;align-items:center;justify-content:center;cursor:zoom-out;}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;}
+@media(max-width:720px){.article-body{grid-template-columns:1fr;}.article-sidebar{order:-1;}}
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button class="active" id="btn-en" onclick="setLang('en')">EN</button>
+  <span>|</span>
+  <button id="btn-fr" onclick="setLang('fr')">FR</button>
+</div>
+
+<header class="masthead">
+  <p class="masthead-eyebrow" id="t-masthead-eyebrow"></p>
+  <h1 class="masthead-title">The True</h1>
+  <p class="masthead-subtitle" id="t-masthead-subtitle"></p>
+  <div class="masthead-rule">* * *</div>
+  <div class="masthead-meta">
+    <span id="t-meta-date"></span>
+    <span id="t-meta-continues"></span>
+    <span>Vol. I - No. 1</span>
+  </div>
+</header>
+
+<div class="countdown-bar">
+  <span class="countdown-label" id="t-countdown-label"></span>
+  <div class="countdown-timer">
+    <div class="countdown-unit">
+      <span class="countdown-num" id="cd-days">00</span>
+      <span class="countdown-unit-label" id="t-cd-days"></span>
+    </div>
+    <span class="countdown-sep">:</span>
+    <div class="countdown-unit">
+      <span class="countdown-num" id="cd-hours">00</span>
+      <span class="countdown-unit-label" id="t-cd-hours"></span>
+    </div>
+    <span class="countdown-sep">:</span>
+    <div class="countdown-unit">
+      <span class="countdown-num" id="cd-mins">00</span>
+      <span class="countdown-unit-label" id="t-cd-mins"></span>
+    </div>
+    <span class="countdown-sep">:</span>
+    <div class="countdown-unit">
+      <span class="countdown-num" id="cd-secs">00</span>
+      <span class="countdown-unit-label" id="t-cd-secs"></span>
+    </div>
+  </div>
+</div>
+
+<main class="page">
+
+  <nav class="section-nav">
+    <button class="nav-item active" onclick="showSection('investigation',this)" id="t-nav-investigation"></button>
+    <button class="nav-item" onclick="showSection('documents',this)" id="t-nav-documents"></button>
+    <button class="nav-item" onclick="showSection('timeline',this)" id="t-nav-timeline"></button>
+    <button class="nav-item" onclick="showSection('about',this)" id="t-nav-about"></button>
+  </nav>
+
+  <div class="breaking">
+    <span class="breaking-tag" id="t-breaking-tag"></span>
+    <span class="breaking-text" id="t-breaking-text"></span>
+  </div>
+
+  <!-- INVESTIGATION -->
+  <section class="section active" id="section-investigation">
+    <div class="article-header">
+      <p class="article-kicker" id="t-kicker"></p>
+      <h2 class="article-headline" id="t-headline"></h2>
+      <p class="article-deck" id="t-deck"></p>
+      <p class="article-byline" id="t-byline"></p>
+    </div>
+    <div class="article-body">
+      <div class="article-text">
+        <p id="t-p1"></p>
+        <h3 id="t-h-doc"></h3>
+        <p id="t-p2"></p>
+        <p id="t-p3"></p>
+        <div class="cipher-block">
+          <p class="cipher-label" id="t-cipher1-label"></p>
+          <p class="cipher-fr" id="t-cipher1-fr"></p>
+          <p class="cipher-en" id="t-cipher1-en"></p>
+        </div>
+        <p id="t-p4"></p>
+        <div class="cipher-block">
+          <p class="cipher-label" id="t-cipher2-label"></p>
+          <p class="cipher-fr" id="t-cipher2-fr"></p>
+          <p class="cipher-en" id="t-cipher2-en"></p>
+        </div>
+        <div class="blockquote"><p id="t-bq1"></p></div>
+        <p id="t-p5"></p>
+        <h3 id="t-h-secrets"></h3>
+        <p id="t-p6"></p>
+        <p id="t-p7"></p>
+        <div class="blockquote"><p id="t-bq2"></p></div>
+        <h3 id="t-h-influence"></h3>
+        <p id="t-p8"></p>
+        <p id="t-p9"></p>
+        <h3 id="t-h-silence"></h3>
+        <p id="t-p10"></p>
+        <div class="blockquote"><p id="t-bq3"></p></div>
+        <p id="t-p11"></p>
+        <p style="font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:0.1em;color:var(--blood-bright);margin-top:2rem;" id="t-ending"></p>
+      </div>
+      <aside class="article-sidebar">
+        <div class="sidebar-update">
+          <p class="sidebar-update-label" id="t-update-label"></p>
+          <p id="t-update-text"></p>
+        </div>
+        <div class="sidebar-doc">
+          <img src="Nostradamus_Lettre_Medicis1.png" alt="Recovered parchment" onclick="openLightbox(this.src)">
+          <div class="sidebar-doc-caption">
+            <span class="status" id="t-doc-status"></span>
+            <p id="t-doc-caption"></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- DOCUMENTS -->
+  <section class="section" id="section-documents">
+    <h2 class="section-heading" id="t-docs-heading"></h2>
+    <p class="section-sub" id="t-docs-sub"></p>
+    <div class="docs-grid">
+      <div class="doc-card">
+        <img class="doc-card-img" src="Nostradamus_Lettre_Medicis1.png" alt="Nostradamus Letter" onclick="openLightbox(this.src)" style="cursor:zoom-in;">
+        <div class="doc-card-body">
+          <span class="doc-status status-active" id="t-doc1-status"></span>
+          <p class="doc-title" id="t-doc1-title"></p>
+          <p class="doc-desc" id="t-doc1-desc"></p>
+        </div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-placeholder"><div class="doc-placeholder-inner"><span class="doc-placeholder-icon">&#9632;</span><p class="doc-placeholder-text" id="t-doc2-placeholder"></p></div></div>
+        <div class="doc-card-body">
+          <span class="doc-status status-partial" id="t-doc2-status"></span>
+          <p class="doc-title" id="t-doc2-title"></p>
+          <p class="doc-desc" id="t-doc2-desc"></p>
+        </div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-placeholder"><div class="doc-placeholder-inner"><span class="doc-placeholder-icon">&#9632;</span><p class="doc-placeholder-text" id="t-doc3-placeholder"></p></div></div>
+        <div class="doc-card-body">
+          <span class="doc-status status-locked" id="t-doc3-status"></span>
+          <p class="doc-title" id="t-doc3-title"></p>
+          <p class="doc-desc" id="t-doc3-desc"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section" id="section-timeline">
+    <h2 class="section-heading" id="t-tl-heading"></h2>
+    <p class="section-sub" id="t-tl-sub"></p>
+    <div class="investigation-timeline">
+      <div class="timeline-entry">
+        <p class="timeline-date">c. 1503 - 1566</p>
+        <p class="timeline-title" id="t-tl1-title"></p>
+        <p class="timeline-body" id="t-tl1-body"></p>
+      </div>
+      <div class="timeline-entry">
+        <p class="timeline-date">c. 1556</p>
+        <p class="timeline-title" id="t-tl2-title"></p>
+        <p class="timeline-body" id="t-tl2-body"></p>
+      </div>
+      <div class="timeline-entry">
+        <p class="timeline-date" id="t-tl3-date"></p>
+        <p class="timeline-title" id="t-tl3-title"></p>
+        <p class="timeline-body" id="t-tl3-body"></p>
+      </div>
+      <div class="timeline-entry">
+        <p class="timeline-date">April 2026</p>
+        <p class="timeline-title" id="t-tl4-title"></p>
+        <p class="timeline-body" id="t-tl4-body"></p>
+      </div>
+      <div class="timeline-entry redacted">
+        <p class="timeline-date" id="t-tl5-date"></p>
+        <p class="timeline-title">&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;</p>
+        <p class="timeline-body">&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608; &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608; &#9608;&#9608;&#9608;&#9608; &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608; &#9608;&#9608;&#9608; &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;.
+          <span class="redacted-label" id="t-tl5-redacted"></span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="section-about">
+    <h2 class="section-heading" id="t-about-heading"></h2>
+    <p class="section-sub" id="t-about-sub"></p>
+    <div class="about-content">
+      <p id="t-about-p1"></p>
+      <p id="t-about-p2"></p>
+      <p id="t-about-p3"></p>
+      <div class="about-warning">
+        <p id="t-about-warning"></p>
+        <div class="about-email">
+          <a href="mailto:thetrue.investigation@gmail.com">thetrue.investigation@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="footer-blood">&#129405;</span>
+  <p id="t-footer-title"></p>
+  <p id="t-footer-continues"></p>
+  <div class="footer-links">
+    <a href="https://baaelithgames.github.io" target="_blank">Baaelith Games</a>
+    <a href="https://store.steampowered.com/app/4516770/Bloody_Moon__First_Fear/" target="_blank">Steam Wishlist</a>
+    <a href="https://www.kickstarter.com/projects/baaelithgames/bloody-moon-first-fear-pure-and-uncompromising-horror" target="_blank">Kickstarter</a>
+    <a href="https://x.com/BaaelithGames" target="_blank">X / Twitter</a>
+    <a href="mailto:thetrue.investigation@gmail.com">Contact</a>
+  </div>
+  <p class="footer-disclaimer" id="t-footer-disclaimer"></p>
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+var T = {
+  en: {
+    'masthead-eyebrow': 'Investigation Ongoing - Since the 16th Century',
+    'masthead-subtitle': 'Independent Investigation Journal',
+    'meta-date': 'Paris, April 10, 2026',
+    'meta-continues': 'The investigation continues.',
+    'countdown-label': 'Next Blood Moon',
+    'cd-days': 'days', 'cd-hours': 'hours', 'cd-mins': 'min', 'cd-secs': 'sec',
+    'nav-investigation': 'Investigation',
+    'nav-documents': 'Documents',
+    'nav-timeline': 'Timeline',
+    'nav-about': 'About',
+    'breaking-tag': 'Update',
+    'breaking-text': 'Someone contacted us privately. They believe they have identified the erased symbols. We asked them to wait. They agreed. For now.',
+    'kicker': 'Exclusive - The Bloody Moon Order',
+    'headline': 'The Bloody Moon Order : The Conspiracy France Won\'t Acknowledge',
+    'deck': 'A document recovered from the vaults of the Bibliotheque Nationale de France appears to confirm what fringe researchers have argued for decades.',
+    'byline': 'By our special correspondent - Paris, April 10, 2026',
+    'p1': 'For years, historians refused to entertain the idea. Archives were sealed. Witnesses went silent. But today, a previously unseen document recovered from the basement vaults of the Bibliotheque Nationale de France appears to confirm what a handful of fringe researchers have argued for decades : a secret order has been operating at the heart of French institutions since the 16th century.',
+    'h-doc': 'The Document',
+    'p2': 'It takes the form of a letter. The parchment is ancient, the ink faded by centuries. At the top, three words that send a chill : Her Majesty Queen Catherine. The signature at the bottom leaves no room for doubt : M. Nostredamme.',
+    'p3': 'The body of the letter is cryptic, coded as was the author\'s custom :',
+    'cipher1-label': 'Original - M. Nostredamme, c. 1556',
+    'cipher1-fr': '"Le Soleil et la Lune s\'unissent enfin pour votre gloire. Sous le Soleil de Mercure l\'equilibre de l\'or Alchimique protege votre trone. Dormez en paix, car Saturne veille sur vos secrets les plus sombres."',
+    'cipher1-en': '[Translation] "The Sun and the Moon unite at last for your glory. Beneath the Sun of Mercury, the balance of Alchemical gold protects your throne. Sleep in peace, for Saturn watches over your darkest secrets."',
+    'p4': 'But it is at the bottom of the parchment, written in a subtly different ink, that the true revelation lies. A quatrain, hidden like a forgotten footnote :',
+    'cipher2-label': 'Hidden quatrain - different ink',
+    'cipher2-fr': '"Sous le sceau de l\'infame et du grand silence, Git le depot sacre de votre descendance. La ou le Paria cache sa Patte Maudite, L\'ombre de la Couronne en secret s\'abrite."',
+    'cipher2-en': '[Translation] "Beneath the seal of the infamous and the great silence, Lies the sacred deposit of your bloodline. Where the Pariah hides his Cursed Mark, The shadow of the Crown finds its secret shelter."',
+    'bq1': 'This quatrain is not a prophecy. It describes a hiding place. A child. A bloodline deliberately erased from official history.',
+    'p5': 'Historical cryptography experts consulted by this publication are unequivocal.',
+    'h-secrets': 'A Document That Has Not Yet Revealed All Its Secrets',
+    'p6': 'But the quatrain may only be the surface. According to researchers currently examining the parchment, the document still holds mysteries that no one has been able to unravel.',
+    'p7': 'Barely visible annotations run along the margins. Symbols that paleographers have yet to identify. Words deliberately scratched out as if someone, after the fact, had tried to limit what the letter could expose.',
+    'bq2': 'We have deciphered part of it. But only part. This document is a door. And we do not yet know what lies behind it.',
+    'h-influence': 'An Influence That Spans Centuries',
+    'p8': 'What surrounds this document is deeply unsettling. Across several centuries, the same symbol - a red moon above a carved stone - reappears in the margins of official records. Royal contracts. Military dispatches. Church registers. Always discreet. Always present.',
+    'p9': 'Researchers who agreed to speak with us on condition of anonymity describe an organization of rare sophistication. They never sought visible power. They sought to influence those who held it.',
+    'h-silence': 'The Silence of Authorities',
+    'p10': 'Reached for comment, the French Ministry of Culture declined to respond. The Bibliotheque nationale did not follow up on our requests to access the original documents. One historian close to the matter, speaking anonymously, told us simply :',
+    'bq3': 'Some truths are more dangerous than the lies that replace them.',
+    'p11': 'The document exists. It has been seen. It has been photographed. And someone does not want it read.',
+    'ending': 'The next Blood Moon is December 31, 2028. The investigation continues.',
+    'update-label': 'Latest update',
+    'update-text': 'Someone contacted us privately. They believe they have identified the erased symbols. We asked them to wait before going public. They agreed. For now.',
+    'doc-status': 'Analysis ongoing',
+    'doc-caption': 'Recovered parchment. Bibliotheque Nationale de France - basement vault B-7. Ink analysis : c. 1550-1560. Margin symbols : not yet identified.',
+    'docs-heading': 'Documents',
+    'docs-sub': 'All recovered materials - analysis ongoing',
+    'doc1-status': 'Under analysis',
+    'doc1-title': 'Letter - M. Nostredamme to Catherine de Medicis',
+    'doc1-desc': 'c. 1556 - Recovered BnF vault B-7. Contains primary cipher and hidden quatrain. Margin symbols partially identified.',
+    'doc2-placeholder': 'Awaiting clearance',
+    'doc2-status': 'Partial',
+    'doc2-title': 'Church Register - Saint-Remy-de-Provence, 1558',
+    'doc2-desc': 'Contains the symbol. Three entries scratched out. Names illegible.',
+    'doc3-placeholder': 'Classified',
+    'doc3-status': 'Locked',
+    'doc3-title': 'Military Dispatch - [REDACTED], 1685',
+    'doc3-desc': 'Intercepted. Symbol confirmed in margin. Content under review.',
+    'tl-heading': 'Investigation Timeline',
+    'tl-sub': 'Known events - incomplete',
+    'tl1-title': 'Michel de Nostredame - The Prophet',
+    'tl1-body': 'Physician, astrologer, advisor to Catherine de Medicis. His published prophecies are known to all. His private correspondence is not.',
+    'tl2-title': 'The Letter Is Written',
+    'tl2-body': 'A private letter is sent to Catherine de Medicis. It contains a cipher, a hidden quatrain, and - according to analysts - a location. The letter disappears from official records immediately after.',
+    'tl3-date': '16th - 20th century',
+    'tl3-title': 'The Symbol Reappears',
+    'tl3-body': 'A red moon above carved stone. Identified in royal contracts (1572), military dispatches (1685, 1812), church registers (1558, 1743), and academic correspondence (1901). Always in the margins. Never in the body of the text.',
+    'tl4-title': 'The Document Surfaces',
+    'tl4-body': 'The letter is recovered from vault B-7 of the Bibliotheque Nationale de France. The Ministry of Culture does not respond to requests for comment. Analysis begins.',
+    'tl5-date': '- Ongoing -',
+    'tl5-redacted': 'This entry has been withheld pending further verification.',
+    'about-heading': 'About The True',
+    'about-sub': 'Who we are and why this matters',
+    'about-p1': 'The True is an independent investigation journal. We publish what others will not. We verify what others ignore. We follow the evidence wherever it leads - including into archives that were never meant to be opened.',
+    'about-p2': 'The Bloody Moon investigation began in late 2025, when a source provided us with photographs of a document they had accessed during a routine archival review at the Bibliotheque Nationale de France. What started as a curiosity became, within weeks, something considerably larger.',
+    'about-p3': 'We are two people. We work without institutional backing. We do not accept pressure from governments, publishers, or organizations of any kind. We publish under a single rule : if we can verify it, we print it.',
+    'about-warning': 'The study of the parchment is still ongoing. If you have information about the Bloody Moon Order, the Cagots, or the symbol - contact us. We protect our sources absolutely.',
+    'footer-title': 'The True - Independent Investigation Journal',
+    'footer-continues': 'The investigation continues. The next Blood Moon is December 31, 2028.',
+    'footer-disclaimer': 'This publication is a work of fiction created for Bloody Moon : First Fear - an indie game by Baaelith Games (Switzerland).'
+  },
+  fr: {
+    'masthead-eyebrow': 'Enquete en cours - Depuis le XVIe siecle',
+    'masthead-subtitle': 'Journal d Investigation Independant',
+    'meta-date': 'Paris, 10 Avril 2026',
+    'meta-continues': 'L enquete continue.',
+    'countdown-label': 'Prochaine Lune de Sang',
+    'cd-days': 'jours', 'cd-hours': 'heures', 'cd-mins': 'min', 'cd-secs': 'sec',
+    'nav-investigation': 'Enquete',
+    'nav-documents': 'Documents',
+    'nav-timeline': 'Chronologie',
+    'nav-about': 'A propos',
+    'breaking-tag': 'Mise a jour',
+    'breaking-text': 'Quelqu un nous a contactes en prive. Cette personne pense avoir identifie les symboles effaces. Nous lui avons demande d attendre. Elle a accepte. Pour l instant.',
+    'kicker': 'Exclusif - L Ordre de la Lune de Sang',
+    'headline': 'L Ordre de la Lune de Sang : La Conspiration que la France Refuse de Reconnaitre',
+    'deck': 'Un document recupere dans les voutes de la Bibliotheque Nationale de France semble confirmer ce que quelques chercheurs soutiennent depuis des decennies.',
+    'byline': 'Par notre correspondant special - Paris, 10 Avril 2026',
+    'p1': 'Pendant des annees, les historiens ont refuse d envisager cette hypothese. Des archives ont ete scellees. Des temoins ont garde le silence. Mais aujourd hui, un document inedit recupere dans les voutes souterraines de la Bibliotheque Nationale de France semble confirmer ce que quelques chercheurs marginaux soutiennent depuis des decennies : un ordre secret opere au coeur des institutions francaises depuis le XVIe siecle.',
+    'h-doc': 'Le Document',
+    'p2': 'Il prend la forme d une lettre. Le parchemin est ancien, l encre estompee par les siecles. En haut, trois mots qui glacent le sang : Sa Majeste la Reine Catherine. La signature au bas ne laisse aucun doute : M. Nostredamme.',
+    'p3': 'Le corps de la lettre est cryptique, code comme c etait la coutume de l auteur :',
+    'cipher1-label': 'Original - M. Nostredamme, vers 1556',
+    'cipher1-fr': '"Le Soleil et la Lune s unissent enfin pour votre gloire. Sous le Soleil de Mercure l equilibre de l or Alchimique protege votre trone. Dormez en paix, car Saturne veille sur vos secrets les plus sombres."',
+    'cipher1-en': '',
+    'p4': 'Mais c est au bas du parchemin, ecrit dans une encre subtilement differente, que se trouve la veritable revelation. Un quatrain, dissimule comme une note de bas de page oubliee :',
+    'cipher2-label': 'Quatrain cache - encre differente',
+    'cipher2-fr': '"Sous le sceau de l infame et du grand silence, Git le depot sacre de votre descendance. La ou le Paria cache sa Patte Maudite, L ombre de la Couronne en secret s abrite."',
+    'cipher2-en': '',
+    'bq1': 'Ce quatrain n est pas une prophetie. Il decrit une cachette. Un enfant. Une lignee deliberement effacee de l histoire officielle.',
+    'p5': 'Les experts en cryptographie historique consultes par cette publication sont sans equivoque.',
+    'h-secrets': 'Un Document Qui N a Pas Encore Revele Tous Ses Secrets',
+    'p6': 'Mais le quatrain n est peut-etre que la surface. Selon les chercheurs qui examinent actuellement le parchemin, le document recele encore des mysteres que personne n a reussi a demeler.',
+    'p7': 'Des annotations a peine visibles courent le long des marges. Des symboles que les paleographes n ont pas encore identifies. Des mots deliberement grattes, comme si quelqu un, apres coup, avait tente de limiter ce que la lettre pouvait reveler.',
+    'bq2': 'Nous en avons dechiffre une partie. Mais seulement une partie. Ce document est une porte. Et nous ne savons pas encore ce qui se trouve derriere.',
+    'h-influence': 'Une Influence a Travers les Siecles',
+    'p8': 'Ce qui entoure ce document est profondement troublant. A travers plusieurs siecles, le meme symbole - une lune rouge au-dessus d une pierre taillee - reapparait dans les marges des registres officiels. Contrats royaux. Depeches militaires. Registres d eglise. Toujours discret. Toujours present.',
+    'p9': 'Des chercheurs ayant accepte de nous parler sous couvert d anonymat decrivent une organisation d une sophistication rare. Ils n ont jamais cherche le pouvoir visible. Ils cherchaient a influencer ceux qui le detenanient.',
+    'h-silence': 'Le Silence des Autorites',
+    'p10': 'Contacte pour commentaire, le ministere francais de la Culture a refuse de repondre. La Bibliotheque nationale n a pas donne suite a nos demandes d acces aux documents originaux. Un historien proche du dossier, s exprimant sous couvert d anonymat, nous a simplement declare :',
+    'bq3': 'Certaines verites sont plus dangereuses que les mensonges qui les remplacent.',
+    'p11': 'Le document existe. Il a ete vu. Il a ete photographie. Et quelqu un ne veut pas qu il soit lu.',
+    'ending': 'La prochaine Lune de Sang est le 31 decembre 2028. L enquete continue.',
+    'update-label': 'Derniere mise a jour',
+    'update-text': 'Quelqu un nous a contactes en prive. Cette personne pense avoir identifie les symboles effaces. Nous lui avons demande d attendre avant de rendre ca public. Elle a accepte. Pour l instant.',
+    'doc-status': 'Analyse en cours',
+    'doc-caption': 'Parchemin recupere. Bibliotheque Nationale de France - voute souterraine B-7. Analyse de l encre : vers 1550-1560. Symboles en marge : non encore identifies.',
+    'docs-heading': 'Documents',
+    'docs-sub': 'Tous les documents recuperes - analyse en cours',
+    'doc1-status': 'En cours d analyse',
+    'doc1-title': 'Lettre - M. Nostredamme a Catherine de Medicis',
+    'doc1-desc': 'vers 1556 - Recupere voute BnF B-7. Contient le chiffre principal et un quatrain cache. Symboles en marge partiellement identifies.',
+    'doc2-placeholder': 'En attente d autorisation',
+    'doc2-status': 'Partiel',
+    'doc2-title': 'Registre d eglise - Saint-Remy-de-Provence, 1558',
+    'doc2-desc': 'Contient le symbole. Trois entrees grattees. Noms illisibles.',
+    'doc3-placeholder': 'Classifie',
+    'doc3-status': 'Verrouille',
+    'doc3-title': 'Depeche militaire - [CAVIARDE], 1685',
+    'doc3-desc': 'Interceptee. Symbole confirme en marge. Contenu en cours d examen.',
+    'tl-heading': 'Chronologie de l Enquete',
+    'tl-sub': 'Evenements connus - incomplets',
+    'tl1-title': 'Michel de Nostredame - Le Prophete',
+    'tl1-body': 'Medecin, astrologue, conseiller de Catherine de Medicis. Ses propheties publiees sont connues de tous. Sa correspondance privee ne l est pas.',
+    'tl2-title': 'La Lettre Est Redigee',
+    'tl2-body': 'Une lettre privee est envoyee a Catherine de Medicis. Elle contient un chiffre, un quatrain cache et - selon les analystes - une localisation. La lettre disparait des registres officiels immediatement apres.',
+    'tl3-date': 'XVIe - XXe siecle',
+    'tl3-title': 'Le Symbole Reapparait',
+    'tl3-body': 'Une lune rouge au-dessus d une pierre taillee. Identifie dans des contrats royaux (1572), des depeches militaires (1685, 1812), des registres d eglise (1558, 1743) et de la correspondance academique (1901). Toujours en marge. Jamais dans le corps du texte.',
+    'tl4-title': 'Le Document Refait Surface',
+    'tl4-body': 'La lettre est recuperee dans la voute B-7 de la Bibliotheque Nationale de France. Le ministere de la Culture ne repond pas aux demandes de commentaire. L analyse commence.',
+    'tl5-date': '- En cours -',
+    'tl5-redacted': 'Cette entree a ete retenue dans l attente d une verification complementaire.',
+    'about-heading': 'A propos de The True',
+    'about-sub': 'Qui nous sommes et pourquoi cela compte',
+    'about-p1': 'The True est un journal d investigation independant. Nous publions ce que d autres ne publieront pas. Nous verifions ce que d autres ignorent. Nous suivons les preuves ou qu elles menent.',
+    'about-p2': 'L investigation sur la Lune de Sang a commence fin 2025, lorsqu une source nous a fourni des photographies d un document auquel elle avait eu acces lors d une revision archivistique de routine a la Bibliotheque Nationale de France.',
+    'about-p3': 'Nous sommes deux personnes. Nous travaillons sans soutien institutionnel. Nous n acceptons pas de pression de la part de gouvernements, d editeurs ou d organisations quelles qu elles soient.',
+    'about-warning': 'L etude du parchemin est toujours en cours. Si vous disposez d informations sur l Ordre de la Lune de Sang, les Cagots, ou le symbole - contactez-nous. Nous protegeons absolument nos sources.',
+    'footer-title': 'The True - Journal d Investigation Independant',
+    'footer-continues': 'L enquete continue. La prochaine Lune de Sang est le 31 decembre 2028.',
+    'footer-disclaimer': 'Cette publication est une oeuvre de fiction creee pour Bloody Moon : First Fear - un jeu independant de Baaelith Games (Suisse).'
+  }
+};
+
+function setLang(l) {
+  var d = T[l];
+  document.getElementById('btn-en').classList.toggle('active', l === 'en');
+  document.getElementById('btn-fr').classList.toggle('active', l === 'fr');
+  document.documentElement.lang = l;
+  for (var key in d) {
+    var el = document.getElementById('t-' + key);
+    if (el) el.textContent = d[key];
+  }
+}
+
+function showSection(name, btn) {
+  document.querySelectorAll('.section').forEach(function(s){s.classList.remove('active');});
+  document.querySelectorAll('.nav-item').forEach(function(b){b.classList.remove('active');});
+  document.getElementById('section-' + name).classList.add('active');
+  if (btn) btn.classList.add('active');
+}
+
+var target = new Date('2028-12-31T00:00:00');
+function updateCountdown() {
+  var now = new Date();
+  var diff = target - now;
+  if (diff <= 0) { return; }
+  var d = Math.floor(diff / 86400000);
+  var h = Math.floor((diff % 86400000) / 3600000);
+  var m = Math.floor((diff % 3600000) / 60000);
+  var s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLightbox(); });
+
+setLang('en');
+</script>
+</body>
+</html>
