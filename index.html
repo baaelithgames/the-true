@@ -110,10 +110,12 @@ footer p{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.2
 .footer-links a{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.15em;color:rgba(242,232,213,0.25);text-decoration:none;text-transform:uppercase;border-bottom:1px solid rgba(242,232,213,0.08);transition:color 0.2s;}
 .footer-links a:hover{color:var(--gold);}
 .footer-disclaimer{font-size:9px !important;color:rgba(242,232,213,0.12) !important;margin-top:0.5rem;}
-.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:1000;align-items:center;justify-content:center;cursor:zoom-out;}
+.lightbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.92);z-index:10000;align-items:center;justify-content:center;cursor:zoom-out;}
 .lightbox.open{display:flex;}
-.lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;}
-@media(max-width:720px){.article-body{grid-template-columns:1fr;}.article-sidebar{order:-1;}}
+.lightbox img{max-width:90vw;max-height:85vh;object-fit:contain;}
+.lightbox-close{position:absolute;top:12px;right:12px;background:rgba(139,0,0,0.6);border:1px solid rgba(242,232,213,0.4);color:var(--paper);font-family:'Courier Prime',monospace;font-size:20px;line-height:1;padding:10px 15px;cursor:pointer;z-index:10001;}
+.lightbox-hint{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.2em;color:rgba(242,232,213,0.5);text-transform:uppercase;pointer-events:none;}
+@media(max-width:720px){.article-body{grid-template-columns:1fr;}.article-sidebar{position:static;order:-1;}.sidebar-doc img{max-height:45vh;object-fit:cover;object-position:top;}}
 </style>
 </head>
 <body>
@@ -332,7 +334,9 @@ footer p{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.2
 </footer>
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&#10005;</button>
   <img id="lightbox-img" src="" alt="">
+  <p class="lightbox-hint" id="t-lightbox-hint"></p>
 </div>
 
 <script>
@@ -417,7 +421,8 @@ var T = {
     'about-warning': 'The study of the parchment is still ongoing. If you have information about the Bloody Moon Order, the Cagots, or the symbol - contact us. We protect our sources absolutely.',
     'footer-title': 'The True - Independent Investigation Journal',
     'footer-continues': 'The investigation continues. The next Blood Moon is December 31, 2028.',
-    'footer-disclaimer': 'This publication is a work of fiction created for Bloody Moon : First Fear - an indie game by Baaelith Games (Switzerland).'
+    'footer-disclaimer': 'This publication is a work of fiction created for Bloody Moon : First Fear - an indie game by Baaelith Games (Switzerland).',
+    'lightbox-hint': 'Tap anywhere to close'
   },
   fr: {
     'masthead-eyebrow': 'Enquete en cours - Depuis le XVIe siecle',
@@ -499,7 +504,8 @@ var T = {
     'about-warning': 'L etude du parchemin est toujours en cours. Si vous disposez d informations sur l Ordre de la Lune de Sang, les Cagots, ou le symbole - contactez-nous. Nous protegeons absolument nos sources.',
     'footer-title': 'The True - Journal d Investigation Independant',
     'footer-continues': 'L enquete continue. La prochaine Lune de Sang est le 31 decembre 2028.',
-    'footer-disclaimer': 'Cette publication est une oeuvre de fiction creee pour Bloody Moon : First Fear - un jeu independant de Baaelith Games (Suisse).'
+    'footer-disclaimer': 'Cette publication est une oeuvre de fiction creee pour Bloody Moon : First Fear - un jeu independant de Baaelith Games.',
+    'lightbox-hint': 'Touchez l ecran pour fermer'
   }
 };
 
@@ -541,9 +547,11 @@ setInterval(updateCountdown, 1000);
 function openLightbox(src) {
   document.getElementById('lightbox-img').src = src;
   document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
 }
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLightbox(); });
 
@@ -551,3 +559,4 @@ setLang('en');
 </script>
 </body>
 </html>
+
